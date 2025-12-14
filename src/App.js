@@ -25,12 +25,40 @@ function App() {
     newMemos[selectedMemoIndex] = newMemo;
     setMemos(newMemos); // setMemos(memos) 로는 갱신안됨, reference상 같은 오브젝트(같은 주소)라고 생각하기 때문에 렌더링 안됨
   };
+
+  const addMemo = () => {
+    const now = new Date().getTime();
+    setMemos([
+      ...memos,
+      {
+        title: "Untitled",
+        cont: "",
+        credt: now,
+        upddt: now,
+      },
+    ]);
+
+    setSelectMemoIndex(memos.length);
+  };
+
+  const deleteMemo = (index) => {
+    const newMemos = [...memos];
+    newMemos.splice(index, 1);
+    setMemos(newMemos);
+
+    if (index == selectedMemoIndex) {
+      setSelectMemoIndex(0);
+    }
+  };
+
   return (
     <div className="App">
       <SideBar
         memos={memos}
         selectedMemoIndex={selectedMemoIndex}
         setSelectMemoIndex={setSelectMemoIndex}
+        addMemo={addMemo}
+        deleteMemo={deleteMemo}
       />
       <MemoContainer memo={memos[selectedMemoIndex]} setMemo={setMemo} />
     </div>

@@ -1,0 +1,29 @@
+.memoItem {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5px 8px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.delBtn {
+  background: none;
+  color: red;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  display: none;
+}
+
+.memoItem:hover .delBtn {
+  display: inline-block;
+}
+
+.memoItem.selected {
+  font-weight: bold;
+  background-color: beige;
+}

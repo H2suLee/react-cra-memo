@@ -1,0 +1,77 @@
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.SideBar {
+  width: 200px;
+}
+
+.SideBarFooter {
+  text-align: center;
+  padding: 10px;
+}
+
+.addBtn {
+  background: none;
+  border-radius: 100px;
+  border: 2px solid #555;
+  height: 40px;
+  width: 40px;
+  color: #555;
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.3rem;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.MemoContainer {
+  flex: 1;
+}
+
+.memoTitle {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.memoCont {
+  width: 100%;
+  min-height: 600px;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+.memoItem {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5px 8px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.delBtn {
+  background: none;
+  color: red;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  display: none;
+}
+
+.memoItem:hover .delBtn {
+  display: inline-block;
+}
+
+.memoItem.selected {
+  font-weight: bold;
+  background-color: beige;
+}
